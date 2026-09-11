@@ -8,7 +8,6 @@ import {
   BarChart3,
   Users,
   Settings,
-  Anchor,
   ChevronLeft,
   ChevronRight,
 } from 'lucide-react';
@@ -34,25 +33,34 @@ const menuItems = [
 const Sidebar: React.FC<SidebarProps> = ({ activeTab, setActiveTab, collapsed, setCollapsed }) => {
   return (
     <aside
-      className={`fixed left-0 top-0 h-full bg-gradient-to-b from-slate-900 to-slate-800 text-white transition-all duration-300 z-50 ${
+      className={`fixed left-0 top-0 h-full bg-gradient-to-b from-[#1a1a2e] via-[#16213e] to-[#0f0f23] text-white transition-all duration-300 z-50 ${
         collapsed ? 'w-20' : 'w-64'
       }`}
     >
+      {/* Decorative top line */}
+      <div className="absolute top-0 left-0 right-0 h-[2px] bg-gradient-to-r from-orange-500 via-red-500 to-orange-500"></div>
+      
       {/* Logo */}
-      <div className="flex items-center gap-3 px-5 py-6 border-b border-slate-700">
-        <div className="flex-shrink-0 w-10 h-10 bg-gradient-to-br from-cyan-400 to-blue-600 rounded-lg flex items-center justify-center">
-          <Anchor className="w-6 h-6 text-white" />
+      <div className="flex items-center gap-3 px-5 py-5 border-b border-white/5">
+        <div className="flex-shrink-0 w-11 h-11 bg-white rounded-xl flex items-center justify-center shadow-lg shadow-orange-500/20">
+          <img 
+            src="https://kalimasgroup.com/wp-content/uploads/2026/01/c307756b-17d7-4330-b310-21c5b4e9550c_2-removebg-preview.png" 
+            alt="Kalimas Group" 
+            className="w-9 h-9 object-contain"
+          />
         </div>
         {!collapsed && (
           <div className="overflow-hidden">
-            <h1 className="text-lg font-bold tracking-tight">Kalimas Group</h1>
-            <p className="text-xs text-slate-400">Management Control</p>
+            <h1 className="text-base font-bold tracking-tight bg-gradient-to-r from-orange-400 to-red-400 bg-clip-text text-transparent">
+              KALIMAS GROUP
+            </h1>
+            <p className="text-[10px] text-slate-400 font-medium tracking-wider uppercase">Management Control</p>
           </div>
         )}
       </div>
 
       {/* Navigation */}
-      <nav className="mt-6 px-3">
+      <nav className="mt-5 px-3">
         {menuItems.map((item) => {
           const Icon = item.icon;
           const isActive = activeTab === item.id;
@@ -60,15 +68,27 @@ const Sidebar: React.FC<SidebarProps> = ({ activeTab, setActiveTab, collapsed, s
             <button
               key={item.id}
               onClick={() => setActiveTab(item.id)}
-              className={`w-full flex items-center gap-3 px-3 py-3 rounded-lg mb-1 transition-all duration-200 ${
+              className={`w-full flex items-center gap-3 px-3 py-2.5 rounded-xl mb-1 transition-all duration-200 ${
                 isActive
-                  ? 'bg-gradient-to-r from-cyan-500/20 to-blue-500/20 text-cyan-400 border-l-3 border-cyan-400'
-                  : 'text-slate-300 hover:bg-slate-700/50 hover:text-white'
+                  ? 'bg-gradient-to-r from-orange-500/15 to-red-500/10 text-orange-400 shadow-inner'
+                  : 'text-slate-400 hover:bg-white/5 hover:text-white'
               }`}
               title={collapsed ? item.label : undefined}
             >
-              <Icon className={`w-5 h-5 flex-shrink-0 ${isActive ? 'text-cyan-400' : ''}`} />
-              {!collapsed && <span className="text-sm font-medium">{item.label}</span>}
+              <div className={`flex-shrink-0 ${isActive ? 'relative' : ''}`}>
+                {isActive && (
+                  <div className="absolute inset-0 bg-orange-500/20 rounded-lg blur-md"></div>
+                )}
+                <Icon className={`w-[18px] h-[18px] relative ${isActive ? 'text-orange-400' : ''}`} />
+              </div>
+              {!collapsed && (
+                <span className={`text-sm ${isActive ? 'font-semibold' : 'font-medium'}`}>
+                  {item.label}
+                </span>
+              )}
+              {isActive && !collapsed && (
+                <div className="ml-auto w-1.5 h-1.5 bg-orange-400 rounded-full shadow-lg shadow-orange-400/50"></div>
+              )}
             </button>
           );
         })}
@@ -77,16 +97,19 @@ const Sidebar: React.FC<SidebarProps> = ({ activeTab, setActiveTab, collapsed, s
       {/* Collapse button */}
       <button
         onClick={() => setCollapsed(!collapsed)}
-        className="absolute bottom-6 left-1/2 -translate-x-1/2 w-8 h-8 bg-slate-700 hover:bg-slate-600 rounded-full flex items-center justify-center transition-colors"
+        className="absolute bottom-24 left-1/2 -translate-x-1/2 w-8 h-8 bg-white/5 hover:bg-white/10 border border-white/10 rounded-full flex items-center justify-center transition-all hover:border-orange-500/30"
       >
-        {collapsed ? <ChevronRight className="w-4 h-4" /> : <ChevronLeft className="w-4 h-4" />}
+        {collapsed ? <ChevronRight className="w-4 h-4 text-slate-400" /> : <ChevronLeft className="w-4 h-4 text-slate-400" />}
       </button>
 
       {/* Bottom info */}
       {!collapsed && (
-        <div className="absolute bottom-20 left-4 right-4 p-3 bg-slate-700/50 rounded-lg">
-          <p className="text-xs text-slate-400">NexusBuild Platform</p>
-          <p className="text-xs text-cyan-400 font-medium">AI & Escrow Active</p>
+        <div className="absolute bottom-4 left-4 right-4 p-3 bg-gradient-to-r from-orange-500/10 to-red-500/10 border border-orange-500/20 rounded-xl">
+          <div className="flex items-center gap-2">
+            <div className="w-2 h-2 bg-orange-400 rounded-full animate-pulse"></div>
+            <p className="text-[10px] text-orange-300 font-medium tracking-wide uppercase">NexusBuild AI</p>
+          </div>
+          <p className="text-[10px] text-slate-500 mt-1">Escrow Platform Active</p>
         </div>
       )}
     </aside>

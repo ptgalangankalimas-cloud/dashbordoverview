@@ -28,84 +28,88 @@ const Finance: React.FC = () => {
     <div className="space-y-6">
       {/* Header */}
       <div>
-        <h3 className="text-xl font-bold text-slate-800">Financial Overview</h3>
+        <h3 className="text-xl font-bold text-slate-800" style={{ fontFamily: 'Space Grotesk, sans-serif' }}>Financial Overview</h3>
         <p className="text-sm text-slate-500">Revenue, expenses, and escrow management</p>
       </div>
 
       {/* Financial KPIs */}
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-5">
-        <div className="bg-white rounded-xl p-5 shadow-sm border border-slate-100">
-          <div className="flex items-center justify-between mb-3">
-            <div className="w-10 h-10 bg-emerald-100 rounded-lg flex items-center justify-center">
-              <TrendingUp className="w-5 h-5 text-emerald-600" />
+        <div className="bg-white rounded-2xl p-5 shadow-sm border border-slate-100 card-hover relative overflow-hidden">
+          <div className="absolute top-0 right-0 w-16 h-16 bg-gradient-to-bl from-orange-100 to-transparent rounded-bl-full"></div>
+          <div className="flex items-center justify-between mb-3 relative">
+            <div className="w-11 h-11 bg-gradient-to-br from-orange-400 to-orange-500 rounded-xl flex items-center justify-center shadow-md shadow-orange-200">
+              <TrendingUp className="w-5 h-5 text-white" />
             </div>
-            <span className="text-xs text-emerald-600 font-medium flex items-center gap-1">
+            <span className="text-[10px] text-orange-600 font-bold flex items-center gap-0.5">
               <ArrowUpRight className="w-3 h-3" /> +12.5%
             </span>
           </div>
-          <p className="text-2xl font-bold text-slate-800">Rp {financialData.totalRevenue}B</p>
-          <p className="text-sm text-slate-500">Total Revenue (YTD)</p>
+          <p className="text-2xl font-bold text-slate-800" style={{ fontFamily: 'Space Grotesk, sans-serif' }}>Rp {financialData.totalRevenue}B</p>
+          <p className="text-[10px] text-slate-500 font-medium uppercase tracking-wide mt-1">Total Revenue (YTD)</p>
         </div>
 
-        <div className="bg-white rounded-xl p-5 shadow-sm border border-slate-100">
-          <div className="flex items-center justify-between mb-3">
-            <div className="w-10 h-10 bg-red-100 rounded-lg flex items-center justify-center">
-              <TrendingDown className="w-5 h-5 text-red-600" />
+        <div className="bg-white rounded-2xl p-5 shadow-sm border border-slate-100 card-hover relative overflow-hidden">
+          <div className="absolute top-0 right-0 w-16 h-16 bg-gradient-to-bl from-red-100 to-transparent rounded-bl-full"></div>
+          <div className="flex items-center justify-between mb-3 relative">
+            <div className="w-11 h-11 bg-gradient-to-br from-red-400 to-red-500 rounded-xl flex items-center justify-center shadow-md shadow-red-200">
+              <TrendingDown className="w-5 h-5 text-white" />
             </div>
-            <span className="text-xs text-red-600 font-medium flex items-center gap-1">
+            <span className="text-[10px] text-red-600 font-bold flex items-center gap-0.5">
               <ArrowDownRight className="w-3 h-3" /> +8.2%
             </span>
           </div>
-          <p className="text-2xl font-bold text-slate-800">Rp {financialData.totalExpenses}B</p>
-          <p className="text-sm text-slate-500">Total Expenses (YTD)</p>
+          <p className="text-2xl font-bold text-slate-800" style={{ fontFamily: 'Space Grotesk, sans-serif' }}>Rp {financialData.totalExpenses}B</p>
+          <p className="text-[10px] text-slate-500 font-medium uppercase tracking-wide mt-1">Total Expenses (YTD)</p>
         </div>
 
-        <div className="bg-white rounded-xl p-5 shadow-sm border border-slate-100">
-          <div className="flex items-center justify-between mb-3">
-            <div className="w-10 h-10 bg-cyan-100 rounded-lg flex items-center justify-center">
-              <DollarSign className="w-5 h-5 text-cyan-600" />
+        <div className="bg-white rounded-2xl p-5 shadow-sm border border-slate-100 card-hover relative overflow-hidden">
+          <div className="absolute top-0 right-0 w-16 h-16 bg-gradient-to-bl from-amber-100 to-transparent rounded-bl-full"></div>
+          <div className="flex items-center justify-between mb-3 relative">
+            <div className="w-11 h-11 bg-gradient-to-br from-amber-400 to-orange-500 rounded-xl flex items-center justify-center shadow-md shadow-amber-200">
+              <DollarSign className="w-5 h-5 text-white" />
             </div>
-            <span className="text-xs text-emerald-600 font-medium flex items-center gap-1">
+            <span className="text-[10px] text-orange-600 font-bold flex items-center gap-0.5">
               <ArrowUpRight className="w-3 h-3" /> +18.3%
             </span>
           </div>
-          <p className="text-2xl font-bold text-slate-800">Rp {financialData.netProfit}B</p>
-          <p className="text-sm text-slate-500">Net Profit (YTD)</p>
+          <p className="text-2xl font-bold text-slate-800" style={{ fontFamily: 'Space Grotesk, sans-serif' }}>Rp {financialData.netProfit}B</p>
+          <p className="text-[10px] text-slate-500 font-medium uppercase tracking-wide mt-1">Net Profit (YTD)</p>
         </div>
 
-        <div className="bg-white rounded-xl p-5 shadow-sm border border-slate-100">
-          <div className="flex items-center justify-between mb-3">
-            <div className="w-10 h-10 bg-violet-100 rounded-lg flex items-center justify-center">
-              <Wallet className="w-5 h-5 text-violet-600" />
+        <div className="bg-white rounded-2xl p-5 shadow-sm border border-slate-100 card-hover relative overflow-hidden">
+          <div className="absolute top-0 right-0 w-16 h-16 bg-gradient-to-bl from-rose-100 to-transparent rounded-bl-full"></div>
+          <div className="flex items-center justify-between mb-3 relative">
+            <div className="w-11 h-11 bg-gradient-to-br from-rose-400 to-red-500 rounded-xl flex items-center justify-center shadow-md shadow-rose-200">
+              <Wallet className="w-5 h-5 text-white" />
             </div>
-            <span className="text-xs text-violet-600 font-medium">Escrow</span>
+            <span className="text-[10px] text-rose-600 font-bold">Escrow</span>
           </div>
-          <p className="text-2xl font-bold text-slate-800">Rp {financialData.escrowBalance}B</p>
-          <p className="text-sm text-slate-500">Escrow Balance</p>
+          <p className="text-2xl font-bold text-slate-800" style={{ fontFamily: 'Space Grotesk, sans-serif' }}>Rp {financialData.escrowBalance}B</p>
+          <p className="text-[10px] text-slate-500 font-medium uppercase tracking-wide mt-1">Escrow Balance</p>
         </div>
       </div>
 
       {/* Charts */}
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-5">
         {/* Revenue vs Expenses */}
-        <div className="bg-white rounded-xl p-5 shadow-sm border border-slate-100">
-          <h4 className="text-lg font-semibold text-slate-800 mb-1">Revenue vs Expenses</h4>
-          <p className="text-sm text-slate-500 mb-4">Monthly comparison (Billion IDR)</p>
+        <div className="bg-white rounded-2xl p-5 shadow-sm border border-slate-100">
+          <h4 className="text-lg font-bold text-slate-800 mb-1" style={{ fontFamily: 'Space Grotesk, sans-serif' }}>Revenue vs Expenses</h4>
+          <p className="text-xs text-slate-500 mb-4">Monthly comparison (Billion IDR)</p>
           <ResponsiveContainer width="100%" height={280}>
             <BarChart data={financialData.monthlyReceivables}>
               <CartesianGrid strokeDasharray="3 3" stroke="#f1f5f9" />
-              <XAxis dataKey="month" tick={{ fontSize: 12, fill: '#94a3b8' }} />
-              <YAxis tick={{ fontSize: 12, fill: '#94a3b8' }} />
-              <Tooltip contentStyle={{ borderRadius: '8px', border: '1px solid #e2e8f0' }} />
-              <Bar dataKey="amount" fill="#06b6d4" radius={[4, 4, 0, 0]} />
+              <XAxis dataKey="month" tick={{ fontSize: 11, fill: '#94a3b8' }} />
+              <YAxis tick={{ fontSize: 11, fill: '#94a3b8' }} />
+              <Tooltip contentStyle={{ borderRadius: '12px', border: '1px solid #fed7aa', boxShadow: '0 4px 20px rgba(255,107,43,0.1)' }} />
+              <Bar dataKey="amount" fill="#ff6b2b" radius={[6, 6, 0, 0]} />
             </BarChart>
           </ResponsiveContainer>
         </div>
 
         {/* Profit Trend */}
-        <div className="bg-white rounded-xl p-5 shadow-sm border border-slate-100">
-          <h4 className="text-lg font-semibold text-slate-800 mb-1">Profit Margin Trend</h4>
-          <p className="text-sm text-slate-500 mb-4">Monthly profit margin percentage</p>
+        <div className="bg-white rounded-2xl p-5 shadow-sm border border-slate-100">
+          <h4 className="text-lg font-bold text-slate-800 mb-1" style={{ fontFamily: 'Space Grotesk, sans-serif' }}>Profit Margin Trend</h4>
+          <p className="text-xs text-slate-500 mb-4">Monthly profit margin percentage</p>
           <ResponsiveContainer width="100%" height={280}>
             <LineChart data={[
               { month: 'Jan', margin: 43.8 },
@@ -116,56 +120,56 @@ const Finance: React.FC = () => {
               { month: 'Jun', margin: 46.2 },
             ]}>
               <CartesianGrid strokeDasharray="3 3" stroke="#f1f5f9" />
-              <XAxis dataKey="month" tick={{ fontSize: 12, fill: '#94a3b8' }} />
-              <YAxis tick={{ fontSize: 12, fill: '#94a3b8' }} domain={[35, 55]} />
-              <Tooltip contentStyle={{ borderRadius: '8px', border: '1px solid #e2e8f0' }} />
-              <Line type="monotone" dataKey="margin" stroke="#8b5cf6" strokeWidth={2.5} dot={{ fill: '#8b5cf6', r: 4 }} />
+              <XAxis dataKey="month" tick={{ fontSize: 11, fill: '#94a3b8' }} />
+              <YAxis tick={{ fontSize: 11, fill: '#94a3b8' }} domain={[35, 55]} />
+              <Tooltip contentStyle={{ borderRadius: '12px', border: '1px solid #fecaca' }} />
+              <Line type="monotone" dataKey="margin" stroke="#e63946" strokeWidth={2.5} dot={{ fill: '#e63946', r: 4, strokeWidth: 2, stroke: '#fff' }} />
             </LineChart>
           </ResponsiveContainer>
         </div>
       </div>
 
       {/* Transactions */}
-      <div className="bg-white rounded-xl shadow-sm border border-slate-100 overflow-hidden">
-        <div className="px-5 py-4 border-b border-slate-100 flex items-center justify-between">
+      <div className="bg-white rounded-2xl shadow-sm border border-slate-100 overflow-hidden">
+        <div className="px-5 py-4 border-b border-slate-100 flex items-center justify-between bg-gradient-to-r from-orange-50/50 to-transparent">
           <div>
-            <h4 className="text-lg font-semibold text-slate-800">Recent Transactions</h4>
-            <p className="text-sm text-slate-500">Latest financial activities</p>
+            <h4 className="text-lg font-bold text-slate-800" style={{ fontFamily: 'Space Grotesk, sans-serif' }}>Recent Transactions</h4>
+            <p className="text-xs text-slate-500">Latest financial activities</p>
           </div>
-          <button className="text-sm text-cyan-600 hover:text-cyan-700 font-medium">View All</button>
+          <button className="text-xs text-orange-600 hover:text-orange-700 font-bold">View All →</button>
         </div>
         <div className="overflow-x-auto">
           <table className="w-full">
             <thead>
-              <tr className="bg-slate-50 border-b border-slate-100">
-                <th className="text-left px-5 py-3 text-xs font-semibold text-slate-500 uppercase">Description</th>
-                <th className="text-left px-5 py-3 text-xs font-semibold text-slate-500 uppercase">Client</th>
-                <th className="text-left px-5 py-3 text-xs font-semibold text-slate-500 uppercase">Amount</th>
-                <th className="text-left px-5 py-3 text-xs font-semibold text-slate-500 uppercase">Date</th>
-                <th className="text-left px-5 py-3 text-xs font-semibold text-slate-500 uppercase">Status</th>
+              <tr className="bg-slate-50/50 border-b border-slate-100">
+                <th className="text-left px-5 py-3 text-[10px] font-bold text-slate-500 uppercase tracking-wider">Description</th>
+                <th className="text-left px-5 py-3 text-[10px] font-bold text-slate-500 uppercase tracking-wider">Client</th>
+                <th className="text-left px-5 py-3 text-[10px] font-bold text-slate-500 uppercase tracking-wider">Amount</th>
+                <th className="text-left px-5 py-3 text-[10px] font-bold text-slate-500 uppercase tracking-wider">Date</th>
+                <th className="text-left px-5 py-3 text-[10px] font-bold text-slate-500 uppercase tracking-wider">Status</th>
               </tr>
             </thead>
             <tbody>
               {transactions.map((tx) => (
-                <tr key={tx.id} className="border-b border-slate-50 hover:bg-slate-50/50">
+                <tr key={tx.id} className="border-b border-slate-50 hover:bg-orange-50/30">
                   <td className="px-5 py-3">
                     <div className="flex items-center gap-2">
-                      <div className={`w-2 h-2 rounded-full ${tx.type === 'income' ? 'bg-emerald-500' : 'bg-red-500'}`}></div>
-                      <span className="text-sm text-slate-700">{tx.description}</span>
+                      <div className={`w-2 h-2 rounded-full ${tx.type === 'income' ? 'bg-orange-500' : 'bg-red-500'}`}></div>
+                      <span className="text-xs text-slate-700 font-medium">{tx.description}</span>
                     </div>
                   </td>
-                  <td className="px-5 py-3 text-sm text-slate-600">{tx.client}</td>
+                  <td className="px-5 py-3 text-xs text-slate-600">{tx.client}</td>
                   <td className="px-5 py-3">
-                    <span className={`text-sm font-medium ${tx.type === 'income' ? 'text-emerald-600' : 'text-red-600'}`}>
+                    <span className={`text-xs font-bold ${tx.type === 'income' ? 'text-orange-600' : 'text-red-600'}`}>
                       {tx.type === 'income' ? '+' : ''}Rp {Math.abs(tx.amount)}M
                     </span>
                   </td>
-                  <td className="px-5 py-3 text-sm text-slate-500">{tx.date}</td>
+                  <td className="px-5 py-3 text-xs text-slate-500">{tx.date}</td>
                   <td className="px-5 py-3">
-                    <span className={`px-2 py-0.5 rounded-full text-xs font-medium ${
-                      tx.status === 'Received' ? 'bg-emerald-100 text-emerald-700' :
+                    <span className={`px-2 py-0.5 rounded-full text-[10px] font-bold ${
+                      tx.status === 'Received' ? 'bg-orange-100 text-orange-700' :
                       tx.status === 'Paid' ? 'bg-slate-100 text-slate-700' :
-                      tx.status === 'Escrow' ? 'bg-violet-100 text-violet-700' :
+                      tx.status === 'Escrow' ? 'bg-red-100 text-red-700' :
                       'bg-amber-100 text-amber-700'
                     }`}>
                       {tx.status}
@@ -179,26 +183,28 @@ const Finance: React.FC = () => {
       </div>
 
       {/* Escrow Info */}
-      <div className="bg-gradient-to-r from-violet-50 to-purple-50 border border-violet-200 rounded-xl p-5">
-        <div className="flex items-start gap-4">
-          <div className="w-12 h-12 bg-violet-100 rounded-xl flex items-center justify-center flex-shrink-0">
-            <CreditCard className="w-6 h-6 text-violet-600" />
+      <div className="bg-gradient-to-r from-orange-500 to-red-500 rounded-2xl p-6 text-white shadow-lg shadow-orange-200 relative overflow-hidden">
+        <div className="absolute top-0 right-0 w-40 h-40 bg-white/5 rounded-full -mr-10 -mt-10"></div>
+        <div className="absolute bottom-0 left-1/2 w-32 h-32 bg-white/5 rounded-full -mb-10"></div>
+        <div className="flex items-start gap-4 relative">
+          <div className="w-12 h-12 bg-white/20 rounded-xl flex items-center justify-center flex-shrink-0 backdrop-blur-sm">
+            <CreditCard className="w-6 h-6 text-white" />
           </div>
           <div>
-            <h4 className="text-lg font-semibold text-violet-800">NexusBuild Escrow System</h4>
-            <p className="text-sm text-violet-600 mt-1">
+            <h4 className="text-lg font-bold" style={{ fontFamily: 'Space Grotesk, sans-serif' }}>NexusBuild Escrow System</h4>
+            <p className="text-sm opacity-90 mt-1">
               All project payments are secured through our AI-powered escrow platform. 
               Current escrow balance: <strong>Rp {financialData.escrowBalance}B</strong> | 
               Pending releases: <strong>Rp {financialData.pendingPayments}B</strong>
             </p>
             <div className="flex items-center gap-4 mt-3">
               <div className="flex items-center gap-2">
-                <div className="w-2 h-2 bg-emerald-500 rounded-full"></div>
-                <span className="text-xs text-violet-700">4 Active Escrows</span>
+                <div className="w-2 h-2 bg-white rounded-full animate-pulse"></div>
+                <span className="text-xs opacity-80">4 Active Escrows</span>
               </div>
               <div className="flex items-center gap-2">
-                <div className="w-2 h-2 bg-amber-500 rounded-full"></div>
-                <span className="text-xs text-violet-700">2 Pending Verification</span>
+                <div className="w-2 h-2 bg-amber-300 rounded-full"></div>
+                <span className="text-xs opacity-80">2 Pending Verification</span>
               </div>
             </div>
           </div>

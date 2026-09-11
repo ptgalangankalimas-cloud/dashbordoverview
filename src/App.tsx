@@ -42,7 +42,7 @@ function App() {
   };
 
   return (
-    <div className="min-h-screen bg-slate-50">
+    <div className="min-h-screen bg-[#fafafa]">
       <Sidebar
         activeTab={activeTab}
         setActiveTab={setActiveTab}
@@ -55,15 +55,24 @@ function App() {
           {renderContent()}
         </main>
         {/* Footer */}
-        <footer className="px-6 py-4 border-t border-slate-200 bg-white/50">
+        <footer className="px-6 py-4 border-t border-orange-100/50 bg-white/80 backdrop-blur-sm">
           <div className="flex items-center justify-between">
-            <p className="text-xs text-slate-400">
-              © 2026 Kalimas Group Indonesia. Powered by NexusBuild AI Platform.
-            </p>
+            <div className="flex items-center gap-3">
+              <img 
+                src="https://kalimasgroup.com/wp-content/uploads/2026/01/c307756b-17d7-4330-b310-21c5b4e9550c_2-removebg-preview.png" 
+                alt="Kalimas Group" 
+                className="w-6 h-6 object-contain"
+              />
+              <p className="text-xs text-slate-400">
+                © 2026 Kalimas Group Indonesia. Powered by NexusBuild AI Platform.
+              </p>
+            </div>
             <div className="flex items-center gap-4">
-              <span className="text-xs text-slate-400">ISO 9001 Certified</span>
-              <span className="text-xs text-slate-400">|</span>
-              <span className="text-xs text-cyan-600 font-medium">Escrow Secured</span>
+              <span className="text-[10px] text-slate-400 font-medium">ISO 9001 Certified</span>
+              <span className="text-slate-200">|</span>
+              <span className="text-[10px] text-orange-500 font-bold">Escrow Secured</span>
+              <span className="text-slate-200">|</span>
+              <span className="text-[10px] text-slate-400">Deployed on GitHub Pages</span>
             </div>
           </div>
         </footer>
