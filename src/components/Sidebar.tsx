@@ -44,7 +44,7 @@ const Sidebar: React.FC<SidebarProps> = ({ activeTab, setActiveTab, collapsed, s
       <div className="flex items-center gap-3 px-5 py-5 border-b border-white/5">
         <div className="flex-shrink-0 w-11 h-11 bg-white rounded-xl flex items-center justify-center shadow-lg shadow-orange-500/20">
           <img 
-            src="https://kalimasgroup.com/wp-content/uploads/2026/01/c307756b-17d7-4330-b310-21c5b4e9550c_2-removebg-preview.png" 
+            src="/logo.svg" 
             alt="Kalimas Group" 
             className="w-9 h-9 object-contain"
           />

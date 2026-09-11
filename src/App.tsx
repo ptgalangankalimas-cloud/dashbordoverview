@@ -59,7 +59,7 @@ function App() {
           <div className="flex items-center justify-between">
             <div className="flex items-center gap-3">
               <img 
-                src="https://kalimasgroup.com/wp-content/uploads/2026/01/c307756b-17d7-4330-b310-21c5b4e9550c_2-removebg-preview.png" 
+                src="/logo.svg" 
                 alt="Kalimas Group" 
                 className="w-6 h-6 object-contain"
               />
