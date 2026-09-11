@@ -4,14 +4,37 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Kalimas Group - Management Control Dashboard</title>
+    
+    <!-- Primary Favicon - PNG Format -->
     <link rel="icon" type="image/png" href="https://kalimasgroup.com/wp-content/uploads/2026/01/c307756b-17d7-4330-b110-21c5b4e9550c_2-removebg-preview.png" />
+    
+    <!-- Apple Touch Icon for iOS -->
+    <link rel="apple-touch-icon" href="https://kalimasgroup.com/wp-content/uploads/2026/01/c307756b-17d7-4330-b110-21c5b4e9550c_2-removebg-preview.png" />
+    
+    <!-- Favicon Alternative (SVG Fallback) -->
+    <link rel="icon" type="image/svg+xml" href="/logo.svg" />
+    
+    <!-- Theme Color Meta Tag -->
+    <meta name="theme-color" content="#ffffff" />
+    <meta name="theme-color" content="#1a1a1a" media="(prefers-color-scheme: dark)" />
+    
+    <!-- Brand Meta Tags -->
+    <meta name="application-name" content="Kalimas Group Dashboard" />
+    <meta name="apple-mobile-web-app-title" content="Kalimas Dashboard" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+    
+    <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome Icons -->
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
     />
+    
     <style>
       /* 内联样式确保主题色立即生效，避免闪烁 */
       html,
@@ -32,6 +55,7 @@
         color: #ffffff;
       }
     </style>
+    
     <script>
       // 在 React 加载前立即设置主题，避免闪烁
       (function () {
@@ -41,6 +65,12 @@
           document.documentElement.classList.remove("light", "dark");
           document.documentElement.classList.add(theme);
           document.documentElement.setAttribute("data-theme", theme);
+          
+          // Update theme-color meta tag
+          const themeColorMeta = document.querySelector('meta[name="theme-color"]');
+          if (themeColorMeta && theme === "dark") {
+            themeColorMeta.setAttribute("content", "#1a1a1a");
+          }
         }
 
         if (isInIframe) {
@@ -59,7 +89,8 @@
         }
       })();
     </script>
-      <script>
+    
+    <script>
       (function () {
         if (window.self === window.top) return;
         var reported = {};
