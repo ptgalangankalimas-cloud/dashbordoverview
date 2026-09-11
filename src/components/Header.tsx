@@ -10,9 +10,16 @@ const Header: React.FC<HeaderProps> = ({ title, subtitle }) => {
   return (
     <header className="glass border-b border-orange-100/50 px-6 py-4 sticky top-0 z-40">
       <div className="flex items-center justify-between">
-        <div>
-          <h2 className="text-2xl font-bold text-slate-800" style={{ fontFamily: 'Space Grotesk, sans-serif' }}>{title}</h2>
-          <p className="text-sm text-slate-500">{subtitle}</p>
+        <div className="flex items-center gap-4">
+          <img 
+            src="https://kalimasgroup.com/wp-content/uploads/2026/01/c307756b-17d7-4330-b110-21c5b4e9550c_2-removebg-preview.png" 
+            alt="Kalimas Group" 
+            className="w-12 h-12 object-contain"
+          />
+          <div>
+            <h2 className="text-2xl font-bold text-slate-800" style={{ fontFamily: 'Space Grotesk, sans-serif' }}>{title}</h2>
+            <p className="text-sm text-slate-500">{subtitle}</p>
+          </div>
         </div>
 
         <div className="flex items-center gap-3">

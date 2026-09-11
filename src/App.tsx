@@ -59,9 +59,9 @@ function App() {
           <div className="flex items-center justify-between">
             <div className="flex items-center gap-3">
               <img 
-                src="/logo.svg" 
+                src="https://kalimasgroup.com/wp-content/uploads/2026/01/c307756b-17d7-4330-b110-21c5b4e9550c_2-removebg-preview.png" 
                 alt="Kalimas Group" 
-                className="w-6 h-6 object-contain"
+                className="w-8 h-8 object-contain"
               />
               <p className="text-xs text-slate-400">
                 © 2026 Kalimas Group Indonesia. Powered by NexusBuild AI Platform.

@@ -42,11 +42,11 @@ const Sidebar: React.FC<SidebarProps> = ({ activeTab, setActiveTab, collapsed, s
       
       {/* Logo */}
       <div className="flex items-center gap-3 px-5 py-5 border-b border-white/5">
-        <div className="flex-shrink-0 w-11 h-11 bg-white rounded-xl flex items-center justify-center shadow-lg shadow-orange-500/20">
+        <div className="flex-shrink-0 w-11 h-11 bg-white rounded-xl flex items-center justify-center shadow-lg shadow-orange-500/20 overflow-hidden">
           <img 
-            src="/logo.svg" 
+            src="https://kalimasgroup.com/wp-content/uploads/2026/01/c307756b-17d7-4330-b110-21c5b4e9550c_2-removebg-preview.png" 
             alt="Kalimas Group" 
-            className="w-9 h-9 object-contain"
+            className="w-10 h-10 object-contain"
           />
         </div>
         {!collapsed && (
